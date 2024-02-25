@@ -5,6 +5,7 @@ import 'package:quiztalent/text_with_style.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:flutter/cupertino.dart';
 
 class LeadboardFacile extends StatefulWidget{
   @override
@@ -116,18 +117,18 @@ class StateLeadboardFacile extends State<LeadboardFacile>{
                 Padding(padding: EdgeInsets.only(top: 50),child: Center(
                   child: Text("LeadBoard Des talentueux du Niveau Facile(Top 20)", style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 24,
                   ), textAlign: TextAlign.center,),
                 )
                 ),
-                Padding(padding: EdgeInsets.only(top: 20),
+                Padding(padding: EdgeInsets.only(top: 0),
                   child: Card(
-                    margin: EdgeInsets.all(25),
+                    margin: EdgeInsets.all(35),
                     color: Color.fromRGBO(46, 66, 90, 1),
                     elevation: 8,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
-                      child: this.trouver ? meuilleure() : TextWithStyle(data: "Aucun joueur", color: Colors.white, size: 50,),
+                      child: this.trouver ? meuilleure() : TextWithStyle(data: "Aucun joueur", color: Colors.white, size: 30,),
                     ),
                   ),
                 )
@@ -148,7 +149,7 @@ class StateLeadboardFacile extends State<LeadboardFacile>{
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextWithStyle(data: "$key : $value", size: 30, color: Colors.white),
+              TextWithStyle(data: "$key : $value", size: 23, color: Colors.white),
               const Divider(
                 thickness: 10,
                 color: Colors.deepOrange,

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:quiztalent/historique.dart';
 import 'package:quiztalent/page_game.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -178,22 +179,17 @@ class StateHomePage extends State<HomePage> {
 
   Future<void> insertData(String value) async {
 
-    var response = await Supabase.instance.client.from('user').select('nom_gamer').eq('nom_gamer', value).single();
+    var response = await Supabase.instance.client.from('user').select('nom_gamer').eq('nom_gamer', value);
 
 
-    if (response.values != null) {
+    if (!response.isEmpty) {
       print('La valeur existe déjà');
       setState(() {
         this.erreur = "Username existe déja";
       });
 
     } else {
-
-      var insertResponse = await Supabase.instance.client.from('user').insert({'nom_gamer':value});
-      if (insertResponse.error != null) {
-        print('Erreur lors de l\'insertion des données: ${insertResponse.error!.message}');
-
-      } else {
+        await Supabase.instance.client.from('user').insert({'nom_gamer':value});
         print('Données insérées avec succès');
 
       }
@@ -218,4 +214,3 @@ class StateHomePage extends State<HomePage> {
       },
     );
   }
-}

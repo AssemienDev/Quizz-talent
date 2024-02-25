@@ -7,6 +7,7 @@ import 'package:quiztalent/normale_quizz_page.dart';
 import 'package:quiztalent/text_with_style.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/cupertino.dart';
 
 
 

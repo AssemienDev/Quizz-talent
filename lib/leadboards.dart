@@ -9,6 +9,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:flutter/cupertino.dart';
 
 
 class Leadboard extends StatefulWidget{
@@ -124,7 +125,7 @@ class StateLeadboard extends State<Leadboard>{
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.only(top: 130),child: TextWithStyle(data: "LeadBoard Des talentueux", color: Colors.white, size: 30,),),
+              Padding(padding: EdgeInsets.only(top: 110),child: TextWithStyle(data: "LeadBoard Des talentueux", color: Colors.white, size: 25,),),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
@@ -134,9 +135,9 @@ class StateLeadboard extends State<Leadboard>{
                         playAudioFromAsset();
                       }
                             Navigator.of(context).push(leadBoardFacile());
-                    }, child: TextWithStyle(data: "Niveau: Facile",color: Colors.white, size: 30,), style: TextButton.styleFrom(
+                    }, child: TextWithStyle(data: "Niveau: Facile",color: Colors.white, size: 23,), style: TextButton.styleFrom(
                       backgroundColor: Colors.deepOrange,
-                      fixedSize: Size(300, 70)
+                      fixedSize: Size(200, 60)
                     ),
 
                     ),
@@ -146,9 +147,9 @@ class StateLeadboard extends State<Leadboard>{
                         playAudioFromAsset();
                       }
                       Navigator.of(context).push(leadBoardNormale());
-                    }, child: TextWithStyle(data: "Niveau: Normale",color: Colors.white, size: 30,), style: TextButton.styleFrom(
+                    }, child: TextWithStyle(data: "Niveau: Normale",color: Colors.white, size: 23,), style: TextButton.styleFrom(
                         backgroundColor: Colors.deepOrange,
-                        fixedSize: Size(300, 70)
+                        fixedSize: Size(200, 60)
                     ),
                     ),
                     ),
@@ -157,9 +158,9 @@ class StateLeadboard extends State<Leadboard>{
                         playAudioFromAsset();
                       }
                       Navigator.of(context).push(leadBoardAvancer());
-                    }, child: TextWithStyle(data: "Niveau: Avancer",color: Colors.white, size: 30,), style: TextButton.styleFrom(
+                    }, child: TextWithStyle(data: "Niveau: Avancer",color: Colors.white, size: 23,), style: TextButton.styleFrom(
                         backgroundColor: Colors.deepOrange,
-                        fixedSize: Size(300, 70)
+                        fixedSize: Size(200, 60)
                     ),
                     ),
                     )

@@ -5,6 +5,7 @@ import 'package:quiztalent/datas.dart';
 import 'package:flutter/material.dart';
 import 'package:quiztalent/text_with_style.dart';
 import 'home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -177,7 +178,7 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
                         builder: (context, child) {
                           return Opacity(
                             opacity: _imageAnimation.value,
-                            child: Image.asset("images/17973872.png"),
+                            child: Image.asset("images/17973872.png",),
                           );
                         },
                       ),
@@ -239,6 +240,10 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
       setState(() {
         score++;
       });
+      if(volume == "activer"){
+        playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+      }
+      showAnswer(bonneReponse);
     }else{
       etat++;
       if(etat == 1){
@@ -246,18 +251,29 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
 
           bool1 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 2){
         setState(() {
           bool1 = false;
           bool2 = false;
         });
-
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 3){
         setState(() {
           bool1 = false;
           bool2 = false;
           bool3 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 4){
         setState(() {
           bool1 = false;
@@ -265,6 +281,10 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
           bool3 = false;
           bool4 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 5){
         setState(() {
           bool1 = false;
@@ -273,14 +293,12 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
           bool4 = false;
           bool5 = false;
         });
+        player.stop();
         showResult();
       }
     }
 
-    if(volume == "activer"){
-      playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
-    }
-    showAnswer(bonneReponse);
+
   }
 
   Future<void> showAnswer(bool bonne) async{
@@ -340,12 +358,13 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset((scorePercent>=50) ? "images/success.png" : "images/fail.png"),
-              Center(
-                child: TextWithStyle(data:" Félicitation!", weight: FontWeight.bold, size: 30),
+              Image.asset((scorePercent>=50) ? "images/success.png" : "images/fail.png", width:MediaQuery.of(context).size.width/1.5
               ),
               Center(
-                child: TextWithStyle(data: "$scorePercent% Score", size: 45, color: (scorePercent>=50) ? Colors.green : Colors.red ),
+                child: TextWithStyle(data:"Félicitation!", weight: FontWeight.bold, size: 25),
+              ),
+              Center(
+                child: TextWithStyle(data: "$scorePercent% Score", size: 30, color: (scorePercent>=50) ? Colors.green : Colors.red ),
               ),
               Center(
                 child: TextWithStyle(data: "Quiz terminé avec succès", weight: FontWeight.bold,size: 20,),
@@ -389,6 +408,7 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
       setState(() {});
     } else {
       usedQuestionIndices.clear(); // Réinitialiser la liste des questions utilisées
+      player.stop();
       showResult();
     }
   }

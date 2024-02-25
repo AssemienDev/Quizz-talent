@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:quiztalent/text_with_style.dart';
 import 'home_page.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -235,6 +236,10 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
       setState(() {
         score++;
       });
+      if(volume == "activer"){
+        playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+      }
+      showAnswer(bonneReponse);
     }else{
       etat++;
       if(etat == 1){
@@ -242,18 +247,29 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
 
           bool1 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 2){
         setState(() {
           bool1 = false;
           bool2 = false;
         });
-
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 3){
         setState(() {
           bool1 = false;
           bool2 = false;
           bool3 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 4){
         setState(() {
           bool1 = false;
@@ -261,6 +277,10 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
           bool3 = false;
           bool4 = false;
         });
+        if(volume == "activer"){
+          playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
+        }
+        showAnswer(bonneReponse);
       }else if( etat == 5){
         setState(() {
           bool1 = false;
@@ -269,14 +289,11 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
           bool4 = false;
           bool5 = false;
         });
+        player.stop();
         showResult();
       }
     }
 
-    if(volume == "activer"){
-      playAudioFromAsset((bonneReponse) ? "correct-2-46134.mp3" : "negative_beeps-6008.mp3");
-    }
-    showAnswer(bonneReponse);
   }
 
   Future<void> showAnswer(bool bonne) async{
@@ -335,7 +352,7 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset((scorePercent>=50) ? "images/success.png" : "images/fail.png"),
+              Image.asset((scorePercent>=50) ? "images/success.png" : "images/fail.png", width:MediaQuery.of(context).size.width/1.5),
               Center(
                 child: TextWithStyle(data:" Félicitation!", weight: FontWeight.bold, size: 30),
               ),
@@ -378,6 +395,7 @@ class AvancerQuizzPageState extends State<AvancerQuizzPage> with SingleTickerPro
       setState(() {});
     } else {
       usedQuestionIndices.clear(); // Réinitialiser la liste des questions utilisées
+      player.stop();
       showResult();
     }
   }
