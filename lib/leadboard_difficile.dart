@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart.';
 import 'package:quiztalent/text_with_style.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';

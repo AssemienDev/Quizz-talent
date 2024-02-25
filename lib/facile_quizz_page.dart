@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math';
 import 'package:quiztalent/question.dart';
 import 'package:quiztalent/datas.dart';
-import 'package:flutter/material.dart';
 import 'package:quiztalent/text_with_style.dart';
 import 'home_page.dart';
 import 'package:flutter/cupertino.dart';
