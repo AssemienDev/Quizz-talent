@@ -72,12 +72,12 @@ class StateHomePage extends State<HomePage> {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     final width = size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Quizz Talent", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text("Quizz Talent", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
         backgroundColor: const Color.fromRGBO(46, 66, 90, 1),
       ),
-      body: SingleChildScrollView(
+      child: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height-80,
           child: Container(
@@ -98,7 +98,7 @@ class StateHomePage extends State<HomePage> {
                                 height: height/2.1, width: width*0.9, fit: BoxFit.cover ,),
                               Container(
                                 child: const Text("<<Quizz Talent>> est un jeu de quiz sur l'informatique, l'alimentation, culture générale chronométré avec trois niveaux de difficulté où les joueurs choisissent entre vrai ou faux pour répondre aux questions.",
-                                  style: TextStyle(color: Colors.white, fontSize: 20),),
+                                  style: TextStyle(color: CupertinoColors.white, fontSize: 20),),
                               )
                             ],
                           ),),
@@ -127,7 +127,7 @@ class StateHomePage extends State<HomePage> {
                                 backgroundColor: Colors.deepOrange,
                                 minimumSize: Size(100, 50),
                               ),
-                                child: const Text("Commencer" , style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18 ),),
+                                child: const Text("Commencer" , style: TextStyle(color: CupertinoColors.white, fontWeight: FontWeight.bold,fontSize: 18 ),),
                               ),
                             ],
                           ),
@@ -150,7 +150,7 @@ class StateHomePage extends State<HomePage> {
         context: context,
         builder: (BuildContext contex){
           return SimpleDialog(
-            backgroundColor: Colors.white,
+            backgroundColor: CupertinoColors.white,
             title: Center(
               child: TextWithStyle(data: "Nom Gamer",weight: FontWeight.bold, size: 17),
             ),

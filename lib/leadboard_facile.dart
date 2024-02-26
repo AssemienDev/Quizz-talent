@@ -100,12 +100,12 @@ class StateLeadboardFacile extends State<LeadboardFacile>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("LeadBoardFacile", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text("LeadBoardFacile", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
         backgroundColor: const Color.fromRGBO(46, 66, 90, 1),
       ),
-      body: Container(
+      child: Container(
           color: const Color.fromRGBO(36,42,64, 1),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,

@@ -58,11 +58,11 @@ class StatePageGame extends State<PageGame> {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     final width = size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Quizz Talent", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text("Quizz Talent", textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
         backgroundColor: const Color.fromRGBO(46, 66, 90, 1),
-        actions: [
+        trailing:
           (this.volume == "desactiver") ?
           IconButton(onPressed: (){
             setState(() {
@@ -75,9 +75,8 @@ class StatePageGame extends State<PageGame> {
               this.volume = "desactiver";
             });
           }, icon: Icon(Icons.volume_up, color: Colors.white))
-        ],
       ),
-      body: Container(
+      child: Container(
         color: const Color.fromRGBO(36,42,64, 1),
         child: Column(
             mainAxisSize: MainAxisSize.max,

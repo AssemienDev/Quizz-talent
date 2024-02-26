@@ -4,6 +4,7 @@ import 'package:quiztalent/question.dart';
 import 'package:quiztalent/datas.dart';
 import 'package:quiztalent/text_with_style.dart';
 import 'home_page.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -133,12 +134,12 @@ class FacileQuizzPageState extends State<FacileQuizzPage> with SingleTickerProvi
   @override
   Widget build(BuildContext context) {
     final Question question = questions[index];
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Score: $score ", style: TextStyle(color: Colors.white),),
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text("Score: $score ", style: TextStyle(color: Colors.white),),
           backgroundColor: const Color.fromRGBO(46, 66, 90, 1),
         ),
-        body: Container(
+        child: Container(
           color: const Color.fromRGBO(36,42,64, 1),
           child: Center(
             child: Card(

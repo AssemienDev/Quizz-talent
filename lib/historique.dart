@@ -58,9 +58,9 @@ class StateHistorique extends State<Historique> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Historique du Quizz", style: TextStyle(color: Colors.white),), backgroundColor: const Color.fromRGBO(46, 66, 90, 1),),
-      body:
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(middle: Text("Historique du Quizz", style: TextStyle(color: Colors.white),), backgroundColor: const Color.fromRGBO(46, 66, 90, 1),),
+      child:
       Container(
         color: const Color.fromRGBO(36,42,64, 1),
         child: Column(
