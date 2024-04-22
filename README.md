@@ -1,16 +1,21 @@
-# quiztalent
+QuizTalent
+Description
 
-A new Flutter project.
+QuizTalent est un jeu de quiz de culture générale qui teste vos connaissances dans divers domaines tels que l'histoire, la science, la géographie, la littérature et bien plus encore. Avec une interface conviviale et des questions stimulantes, QuizTalent est parfait pour défier vos amis, tester vos connaissances ou simplement vous divertir.
+Fonctionnalités
 
-## Getting Started
+    Questions variées : Le jeu propose une large gamme de questions couvrant divers sujets pour vous offrir une expérience enrichissante.
+    Personnalisation : Personnalisez votre expérience de jeu en ajustant les paramètres tels que la difficulté des questions, le temps imparti et plus encore.
+    Classements : Suivez votre progression et comparez vos scores avec ceux de vos amis grâce au système de classement intégré.
+    Interface intuitive : Une interface conviviale rend la navigation et la participation au jeu facile et agréable pour tous les joueurs.
 
-This project is a starting point for a Flutter application.
+Captures d'écran
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Description de la capture d'écran 1
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Description de la capture d'écran 2
+Installation
+
+Pour installer QuizTalent, suivez ces étapes simples :
