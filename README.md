@@ -17,3 +17,8 @@ Fonctionnalités
 <img src="screenShot/screen3.jpg" alt="Screenshot 3" width="400">
 <h3>Page d'historique</h3>
 
+
+
+<h3>Licence</h3>
+
+Ce projet est sous licence MIT - voir le fichier <a href="LICENSE">LICENSE</a> pour plus de détails.
