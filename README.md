@@ -1,4 +1,4 @@
-<h1>**QUIZZ TALENT**</h1>
+<h1>QUIZZ TALENT</h1>
 
 Description
 
@@ -8,12 +8,12 @@ Fonctionnalités
 
 ## Captures d'écran
 
-![Screenshot 1](screenShot/screen1.jpg)
+<img src="screenShot/screen1.jpg" alt="Screenshot 1" width="400">
 
 
-![Screenshot 2](images/screen2.jpg)
+<img src="screenShot/screen2.jpg" alt="Screenshot 2" width="400">
 
 
-![Screenshot 2](images/screen3.jpg)
+<img src="screenShot/screen3.jpg" alt="Screenshot 3" width="400">
 
 
