@@ -8,10 +8,11 @@ Fonctionnalités
 
 ## Captures d'écran
 
-![Screenshot 1](images/screenshot1.png)
+![Screenshot 1](screenShot/screenshot1.png)
 
 
 ![Screenshot 2](images/screenshot2.png)
+
 
 ![Screenshot 2](images/screenshot2.png)
 
